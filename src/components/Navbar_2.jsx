@@ -32,7 +32,7 @@ export default function Navbar() {
           <a href="/">
             <img
               src={rkrGrp}
-              className="h-8 md:h-10 lg:h-12 text-left"
+              className="h-8"
               alt="logo"
             />
           </a>
