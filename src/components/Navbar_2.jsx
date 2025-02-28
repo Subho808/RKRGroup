@@ -20,7 +20,7 @@ export default function Navbar() {
 
   return (
     <div
-      className={`flex items-center justify-center py-8 px-8 fixed z-50 w-screen transition-all duration-300 ${
+      className={`flex items-center justify-center py-8 px-16 fixed z-50 w-screen transition-all duration-300 ${
         isScrolled
           ? "bg-gradient-to-b from-white to-transparent"
           : "bg-transparent"
