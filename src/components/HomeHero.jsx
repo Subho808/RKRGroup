@@ -29,7 +29,7 @@ export default function Hero() {
         </p>
 
         {/* Button */}
-        <Link to="/tours">
+        <Link to="/OurServices">
           <button className="mt-6 px-8 py-3 rounded-full font-semibold text-lg shadow-lg bg-white text-blue-900 transition duration-300 hover:bg-blue-500 hover:text-white">
             Our Services
           </button>
