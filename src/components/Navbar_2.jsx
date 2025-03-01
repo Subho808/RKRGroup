@@ -68,56 +68,46 @@ export default function Navbar() {
                 </svg>
               </div>
               <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px] font-semibold">
-                <li className="border-b border-gray-400 my-8 uppercase">
-                  <a href="/">Home</a>
-                </li>
-                <li className="border-b border-gray-400 my-8 uppercase">
-                  <a href="/whyUs">Why us?</a>
-                </li>
-                <li className="border-b border-gray-400 my-8 uppercase">
-                  <a href="/OurServices">Our Services</a>
-                </li>
-                <li className="border-b border-gray-400 my-8 uppercase">
-                  <a href="/FutureBusiness">Future Business</a>
-                </li>
-              </ul>
+  <li className="border-b border-gray-400 my-8 uppercase">
+    <Link to="/" onClick={() => setIsNavOpen(false)}>Home</Link>
+  </li>
+  <li className="border-b border-gray-400 my-8 uppercase">
+    <Link to="/whyUs" onClick={() => setIsNavOpen(false)}>Why us?</Link>
+  </li>
+  <li className="border-b border-gray-400 my-8 uppercase">
+    <Link to="/OurServices" onClick={() => setIsNavOpen(false)}>Our Services</Link>
+  </li>
+  <li className="border-b border-gray-400 my-8 uppercase">
+    <Link to="/FutureBusiness" onClick={() => setIsNavOpen(false)}>Future Business</Link>
+  </li>
+</ul>
+
             </div>
           </section>
 
           <ul className="DESKTOP-MENU hidden space-x-12 font-semibold lg:flex">
-            <li>
-              <a
-                href="/"
-                className="text-white transition-all duration-300 hover:text-yellow-400 hover:underline hover:font-bold"
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="/about"
-                className="text-white transition-all duration-300 hover:text-yellow-400 hover:underline hover:font-bold"
-              >
-                About
-              </a>
-            </li>
-            <li>
-              <a
-                href="/OurServices"
-                className="text-white transition-all duration-300 hover:text-yellow-400 hover:underline hover:font-bold"
-              >
-                Our Services
-              </a>
-            </li>
-            <li>
-              <a
-                href="/FutureBusiness"
-                className="text-white transition-all duration-300 hover:text-yellow-400 hover:underline hover:font-bold"
-              >
-                Future Business
-              </a>
-            </li>
-          </ul>
+  <li>
+    <Link to="/" className="text-white transition-all duration-300 hover:text-yellow-400 hover:underline hover:font-bold">
+      Home
+    </Link>
+  </li>
+  <li>
+    <Link to="/about" className="text-white transition-all duration-300 hover:text-yellow-400 hover:underline hover:font-bold">
+      About
+    </Link>
+  </li>
+  <li>
+    <Link to="/OurServices" className="text-white transition-all duration-300 hover:text-yellow-400 hover:underline hover:font-bold">
+      Our Services
+    </Link>
+  </li>
+  <li>
+    <Link to="/FutureBusiness" className="text-white transition-all duration-300 hover:text-yellow-400 hover:underline hover:font-bold">
+      Future Business
+    </Link>
+  </li>
+</ul>
+
         </nav>
       </div>
 
