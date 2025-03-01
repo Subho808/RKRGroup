@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import rkrGrp from "../assets/image-removebg-preview.png";
 
 import "../index.css";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
