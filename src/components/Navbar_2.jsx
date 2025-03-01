@@ -21,7 +21,7 @@ export default function Navbar() {
 
   return (
     <div
-      className={`flex items-center justify-center py-8 px-16 fixed z-50 w-screen transition-all duration-300 ${
+      className={`flex items-center justify-center py-8 px-8 fixed z-50 w-screen transition-all duration-300 ${
         isScrolled
           ? "bg-gradient-to-b from-white to-transparent"
           : "bg-transparent"
@@ -31,11 +31,7 @@ export default function Navbar() {
         <div>
           {/* LOGO */}
           <a href="/">
-            <img
-              src={rkrGrp}
-              className="h-8"
-              alt="logo"
-            />
+            <img src={rkrGrp} className="h-8" alt="logo" />
           </a>
         </div>
 
@@ -69,46 +65,67 @@ export default function Navbar() {
                 </svg>
               </div>
               <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px] font-semibold">
-  <li className="border-b border-gray-400 my-8 uppercase">
-    <Link to="/" onClick={() => setIsNavOpen(false)}>Home</Link>
-  </li>
-  <li className="border-b border-gray-400 my-8 uppercase">
-    <Link to="/whyUs" onClick={() => setIsNavOpen(false)}>Why us?</Link>
-  </li>
-  <li className="border-b border-gray-400 my-8 uppercase">
-    <Link to="/OurServices" onClick={() => setIsNavOpen(false)}>Our Services</Link>
-  </li>
-  <li className="border-b border-gray-400 my-8 uppercase">
-    <Link to="/FutureBusiness" onClick={() => setIsNavOpen(false)}>Future Business</Link>
-  </li>
-</ul>
-
+                <li className="border-b border-gray-400 my-8 uppercase">
+                  <Link to="/" onClick={() => setIsNavOpen(false)}>
+                    Home
+                  </Link>
+                </li>
+                <li className="border-b border-gray-400 my-8 uppercase">
+                  <Link to="/whyUs" onClick={() => setIsNavOpen(false)}>
+                    Why us?
+                  </Link>
+                </li>
+                <li className="border-b border-gray-400 my-8 uppercase">
+                  <Link to="/OurServices" onClick={() => setIsNavOpen(false)}>
+                    Our Services
+                  </Link>
+                </li>
+                <li className="border-b border-gray-400 my-8 uppercase">
+                  <Link
+                    to="/FutureBusiness"
+                    onClick={() => setIsNavOpen(false)}
+                  >
+                    Future Business
+                  </Link>
+                </li>
+              </ul>
             </div>
           </section>
 
           <ul className="DESKTOP-MENU hidden space-x-12 font-semibold lg:flex">
-  <li>
-    <Link to="/" className="text-white transition-all duration-300 hover:text-yellow-400 hover:underline hover:font-bold">
-      Home
-    </Link>
-  </li>
-  <li>
-    <Link to="/about" className="text-white transition-all duration-300 hover:text-yellow-400 hover:underline hover:font-bold">
-      About
-    </Link>
-  </li>
-  <li>
-    <Link to="/OurServices" className="text-white transition-all duration-300 hover:text-yellow-400 hover:underline hover:font-bold">
-      Our Services
-    </Link>
-  </li>
-  <li>
-    <Link to="/FutureBusiness" className="text-white transition-all duration-300 hover:text-yellow-400 hover:underline hover:font-bold">
-      Future Business
-    </Link>
-  </li>
-</ul>
-
+            <li>
+              <Link
+                to="/"
+                className="text-white transition-all duration-300 hover:text-yellow-400 hover:underline hover:font-bold"
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/about"
+                className="text-white transition-all duration-300 hover:text-yellow-400 hover:underline hover:font-bold"
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/OurServices"
+                className="text-white transition-all duration-300 hover:text-yellow-400 hover:underline hover:font-bold"
+              >
+                Our Services
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/FutureBusiness"
+                className="text-white transition-all duration-300 hover:text-yellow-400 hover:underline hover:font-bold"
+              >
+                Future Business
+              </Link>
+            </li>
+          </ul>
         </nav>
       </div>
 
