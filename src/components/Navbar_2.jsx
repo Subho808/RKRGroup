@@ -96,7 +96,7 @@ export default function Navbar() {
             <li>
               <Link
                 to="/"
-                className="text-white transition-all duration-300 hover:text-yellow-400 hover:underline hover:font-bold"
+                className="text-red transition-all duration-300 hover:text-yellow-400 hover:underline hover:font-bold"
               >
                 Home
               </Link>
