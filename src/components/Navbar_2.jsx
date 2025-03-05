@@ -88,44 +88,61 @@ export default function Navbar() {
                     Future Business
                   </Link>
                 </li>
+                <li className="border-b border-gray-400 my-8 uppercase">
+                  <Link
+                    to="/messageUs"
+                    onClick={() => setIsNavOpen(false)}
+                  >
+                    Contact Us
+                  </Link>
+                </li>
               </ul>
             </div>
           </section>
 
           <ul className="DESKTOP-MENU hidden space-x-12 font-semibold lg:flex">
-            <li>
-              <Link
-                to="/"
-                className="text-red transition-all duration-300 hover:text-yellow-400 hover:underline hover:font-bold"
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/about"
-                className="text-white transition-all duration-300 hover:text-yellow-400 hover:underline hover:font-bold"
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/OurServices"
-                className="text-white transition-all duration-300 hover:text-yellow-400 hover:underline hover:font-bold"
-              >
-                Our Services
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/FutureBusiness"
-                className="text-white transition-all duration-300 hover:text-yellow-400 hover:underline hover:font-bold"
-              >
-                Future Business
-              </Link>
-            </li>
-          </ul>
+  <li>
+    <Link
+      to="/"
+      className="text-amber-500 transition-all duration-300 hover:text-green-500 hover:underline hover:font-bold"
+    >
+      Home
+    </Link>
+  </li>
+  <li>
+    <Link
+      to="/about"
+      className="text-amber-500 transition-all duration-300 hover:text-green-500 hover:underline hover:font-bold"
+    >
+      About
+    </Link>
+  </li>
+  <li>
+    <Link
+      to="/OurServices"
+      className="text-amber-500 transition-all duration-300 hover:text-green-500 hover:underline hover:font-bold"
+    >
+      Our Services
+    </Link>
+  </li>
+  <li>
+    <Link
+      to="/FutureBusiness"
+      className="text-amber-500 transition-all duration-300 hover:text-green-500 hover:underline hover:font-bold"
+    >
+      Future Business
+    </Link>
+  </li>
+  <li>
+    <Link
+      to="/messageUs"
+      className="text-amber-500 transition-all duration-300 hover:text-green-500 hover:underline hover:font-bold"
+    >
+      Contact Us
+    </Link>
+  </li>
+</ul>
+
         </nav>
       </div>
 

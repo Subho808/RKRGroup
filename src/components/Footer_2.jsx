@@ -72,6 +72,7 @@ function Footer() {
           <a href="/whyUs" className=" cursor-pointer hover:text-[#406D83]">Why us?</a>
           <a href="/OurServices" className=" cursor-pointer hover:text-[#406D83]">Our Services</a>
           <a href="/FutureBusiness" className=" cursor-pointer hover:text-[#406D83]">Future Business</a>
+          <a href="/messageUs" className=" cursor-pointer hover:text-[#406D83]">Contact Us</a>
         </div>
       </div>
 
@@ -79,13 +80,23 @@ function Footer() {
    
     </div>
 
-    <div className="text-xs lg:text-sm text-center py-4">
-          <p>
-            Copyright © 2025
-            <span className="font-semibold"> R.K.R Group.</span> All rights
-            reserved.
-          </p>
-        </div>
+    <div className="grid grid-cols-2 gap-4">
+  <div className="text-xs lg:text-sm py-4 px-8 justify-self-start">
+    <p>
+      Copyright © 2025
+      <span className="font-semibold"> R.K.R Group.</span> All rights
+      reserved.
+    </p>
+  </div>
+
+  <div className="text-xs lg:text-sm py-4 px-8 justify-self-end">
+    <p>
+    Designed & Developed by
+      <span className="font-semibold"> Tostring.</span>
+    </p>
+  </div>
+</div>
+
     </>
   );
 }

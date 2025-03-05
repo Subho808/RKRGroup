@@ -9,6 +9,7 @@ import FutureBusinessPage from "./pages/FutureBusinessPage";
 import OurServices from "./pages/OurServices";
 import WhyUsPage from "./pages/WhyUsPage";
 import { useEffect } from "react";
+import MessageUsPage from "./pages/MessageUsPage";
 
 function App() {
   
@@ -26,6 +27,7 @@ window.scrollTo(0,0)
             <Route path="/about" element={<Aboutpage />} />
             <Route path="/FutureBusiness" element={<FutureBusinessPage />} />
             <Route path="/whyUs" element={<WhyUsPage />} />
+            <Route path="/messageUs" element={<MessageUsPage />} />
           </Routes>
       </ChakraProvider>
     </>

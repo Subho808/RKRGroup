@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 import "../index.css";
 import rkrBg from "../assets/rkr-group-bg.png";
 
 export default function Hero() {
   return (
-    <div className="relative w-screen h-screen flex justify-center items-center bg-dark-blue">
+    <div className="relative w-screen h-screen flex justify-center items-center bg-dark-blue overflow-hidden">
       {/* Background Image */}
       <img
         className="w-full h-full object-cover absolute top-0 left-0 brightness-90 saturate-100"
@@ -21,6 +22,21 @@ export default function Hero() {
         <h1 className="text-7xl md:text-8xl font-bold text-red-500 drop-shadow-lg">
           R.K.R Group
         </h1>
+
+        {/* Vision Green Animation */}
+        <div className="mt-2 md:ml-[45%] flex space-x-1 text-green-500 font-semibold text-xl relative">
+          {["V", "i", "s", "i", "o", "n", " ", "G", "r", "e", "e", "n"].map(
+            (letter, index) => (
+              <span
+                key={index}
+                className="opacity-0 animate-slide-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                {letter}
+              </span>
+            )
+          )}
+        </div>
 
         <p className="mt-4 text-lg md:text-2xl text-white opacity-80 max-w-2xl">
           To be a trusted leader in renewable energy, civil construction, and
