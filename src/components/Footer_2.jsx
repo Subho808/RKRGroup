@@ -22,7 +22,7 @@ function Footer() {
 
           <div className="flex flex-row items-center gap-3 pt-3">
             <span><IoIosMail /> </span>
-            <span>www.corporate@grouprkr.co.in</span>
+            <span>visiongreenrkr@gmail.com</span>
             </div>
           <div className="flex gap-3">
             <span><FaPhoneAlt /> </span>
@@ -61,7 +61,7 @@ function Footer() {
         </div>
       </div> */}
 
-      <div className="flex-col gap-4 py-6 lg:pl-0 text-white hidden lg:flex">
+      <div className="flex-col gap-4  lg:pl-0 text-white hidden lg:flex">
         
         <p className="font-bold text-sm lg:text-base">Company</p>
 
