@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.visiongreenrkr.com/sitemap.xml
+Sitemap: https://visiongreenrkr.com/sitemap.xml
