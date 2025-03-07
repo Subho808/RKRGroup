@@ -22,7 +22,7 @@ function Footer() {
 
           <div className="flex flex-row items-center gap-3 pt-3">
             <span><IoIosMail /> </span>
-            <span>visiongreenrkr@gmail.com</span>
+            <span>www.corporate@grouprkr.co.in/</span>
             </div>
           <div className="flex gap-3">
             <span><FaPhoneAlt /> </span>
