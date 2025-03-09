@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import rkrGrp from "../assets/image-removebg-preview.png";
+import rkrGrp from "../assets/orange rkrgroup.png";
 
 import "../index.css";
 import { Link } from "react-router-dom";
@@ -21,9 +21,9 @@ export default function Navbar() {
 
   return (
     <div
-      className={`flex items-center justify-center py-8 px-8 fixed z-50 w-screen transition-all duration-300 ${
+      className={`flex items-center justify-center py-4 px-8 fixed z-50 w-screen transition-all duration-300 ${
         isScrolled
-          ? "bg-gradient-to-b from-white to-transparent"
+          ? "bg-gradient-to-b bg-blue-950 to-transparent"
           : "bg-transparent"
       }`}
     >
@@ -31,7 +31,7 @@ export default function Navbar() {
         <div>
           {/* LOGO */}
           <a href="/">
-            <img src={rkrGrp} className="h-8" alt="logo" />
+            <img src={rkrGrp} className="h-16" alt="logo" />
           </a>
         </div>
 
