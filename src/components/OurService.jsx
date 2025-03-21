@@ -24,7 +24,7 @@ function OurService() {
             ))}
           </div>
           
-          <Link to="/tours"> 
+          <Link to="/messageUs"> 
             <button className="px-6 py-3 rounded-3xl font-bold tracking-tight shadow-md bg-[#86aebf] text-white cursor-pointer hover:bg-[#C9D7DD] hover:text-black">
               Contact Us
             </button>
