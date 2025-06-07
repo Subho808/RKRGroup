@@ -3,6 +3,7 @@ import { FaInstagram } from "react-icons/fa";
 import { FaTiktok, FaYoutube, FaFacebookF, FaXTwitter } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
+import Xlogo from "../assets/X Logo.png"
 
 function Footer() {
   return (
@@ -73,6 +74,7 @@ function Footer() {
           <a href="/OurServices" className=" cursor-pointer hover:text-[#406D83]">Our Services</a>
           <a href="/FutureBusiness" className=" cursor-pointer hover:text-[#406D83]">Future Business</a>
           <a href="/messageUs" className=" cursor-pointer hover:text-[#406D83]">Contact Us</a>
+          <a href="/career" className=" cursor-pointer hover:text-[#406D83]">Career</a>
         </div>
       </div>
 
@@ -89,12 +91,18 @@ function Footer() {
     </p>
   </div>
 
-  <div className="text-xs lg:text-sm py-4 px-8 justify-self-end">
-    <p>
+  <div className="text-xs lg:text-sm py-4 px-8 justify-self-end flex items-center gap-2">
+  <p className="flex items-center">
     Designed & Developed by
-      <span className="font-semibold"> Tostring.</span>
-    </p>
-  </div>
+    <img
+      src={Xlogo}       // Replace with your logo image path or URL
+      alt="MSR devXpert Logo"
+      className="h-5 w-auto ml-1"
+    />
+    <span className="font-semibold ml-1"><a href="https://www.msrdevxpert.com">MSR devXpert.</a></span>
+  </p>
+</div>
+
 </div>
 
     </>

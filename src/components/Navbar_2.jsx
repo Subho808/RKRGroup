@@ -96,6 +96,14 @@ export default function Navbar() {
                     Contact Us
                   </Link>
                 </li>
+                <li className="border-b border-gray-400 my-8 uppercase">
+                  <Link
+                    to="/career"
+                    onClick={() => setIsNavOpen(false)}
+                  >
+                    Career
+                  </Link>
+                </li>
               </ul>
             </div>
           </section>
@@ -139,6 +147,14 @@ export default function Navbar() {
       className="text-amber-500 transition-all duration-300 hover:text-green-500 hover:underline hover:font-bold"
     >
       Contact Us
+    </Link>
+  </li>
+  <li>
+    <Link
+      to="/career"
+      className="text-amber-500 transition-all duration-300 hover:text-green-500 hover:underline hover:font-bold"
+    >
+      Career
     </Link>
   </li>
 </ul>
