@@ -2,18 +2,18 @@ import React from 'react'
 import Navbar from '../components/Navbar_2'
 import WhyChooseUs from '../components/WhyUs'
 import Footer from '../components/Footer_2'
-import Career from '../components/career'
+import CustReg from '../components/custReg'
 // import {useLocation} from "react-router-dom"
 
-function careerPage() {
+function custRegPage() {
   return (
     <>
     <Navbar />
-    <Career />
+    <CustReg />
     <Footer />
 
     </>
   )
 }
 
-export default careerPage
+export default custRegPage

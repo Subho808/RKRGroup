@@ -10,8 +10,8 @@ import OurServices from "./pages/OurServices";
 import WhyUsPage from "./pages/WhyUsPage";
 import { useEffect } from "react";
 import MessageUsPage from "./pages/MessageUsPage";
+import CustRegPage from "./pages/custRegPage";
 import CareerPage from "./pages/CareerPage";
-
 function App() {
   
   const { pathname } = useLocation();
@@ -29,6 +29,7 @@ window.scrollTo(0,0)
             <Route path="/FutureBusiness" element={<FutureBusinessPage />} />
             <Route path="/whyUs" element={<WhyUsPage />} />
             <Route path="/messageUs" element={<MessageUsPage />} />
+            <Route path="/custReg" element={<CustRegPage />} />
             <Route path="/career" element={<CareerPage />} />
           </Routes>
       </ChakraProvider>

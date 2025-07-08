@@ -98,10 +98,10 @@ export default function Navbar() {
                 </li>
                 <li className="border-b border-gray-400 my-8 uppercase">
                   <Link
-                    to="/career"
+                    to="/custReg"
                     onClick={() => setIsNavOpen(false)}
                   >
-                    Career
+                    Customer Registration
                   </Link>
                 </li>
               </ul>
@@ -151,10 +151,10 @@ export default function Navbar() {
   </li>
   <li>
     <Link
-      to="/career"
+      to="/custReg"
       className="text-amber-500 transition-all duration-300 hover:text-green-500 hover:underline hover:font-bold"
     >
-      Career
+      Customer Registration
     </Link>
   </li>
 </ul>

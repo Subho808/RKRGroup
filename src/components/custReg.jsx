@@ -2,38 +2,43 @@ import { useRef, useState } from "react";
 import "../index.css";
 import emailjs from "@emailjs/browser";
 
-export default function career() {
+export default function custReg() {
   const form = useRef();
   const [Loading, setLoading] = useState(false);
   const [Submitted, setSubmitted] = useState(false);
 
-  const sendEmail = async (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
     setLoading(true);
 
-    try {
-      const result = await emailjs.sendForm(
-        "service_1p07vce", // ✅ Replace with your actual EmailJS service ID
-        "template_b4fo7ya", // ✅ Replace with your actual template ID
-        form.current,
+    emailjs
+      .sendForm(
+        "service_1p07vce", // Your EmailJS service ID
+        "template_b4fo7ya", // Your EmailJS template ID
+        form.current, // The form ref
         {
-          publicKey: "6LhUCRzyU9w07n9Ir", // ✅ Your EmailJS public key
+          publicKey: "6LhUCRzyU9w07n9Ir", // Your public key
+        }
+      )
+      .then(
+        (result) => {
+          console.log("Email sent successfully:", result.text);
+          setSubmitted(true);
+          setLoading(false);
+
+          // Reset form and submission status after 3 seconds
+          setTimeout(() => {
+            if (form.current) {
+              form.current.reset(); // Reset all form fields
+            }
+            setSubmitted(false);
+          }, 3000);
+        },
+        (error) => {
+          console.error("Email sending failed:", error.text);
+          setLoading(false);
         }
       );
-
-      console.log("✅ Email sent:", result.text);
-      setSubmitted(true);
-      setLoading(false);
-
-      // Reset form after 3 seconds
-      setTimeout(() => {
-        if (form.current) form.current.reset();
-        setSubmitted(false);
-      }, 3000);
-    } catch (error) {
-      console.error("❌ Email send failed:", error.text || error.message);
-      setLoading(false);
-    }
   };
 
   return (
@@ -43,21 +48,18 @@ export default function career() {
         style={{ minWidth: "50rem" }}
       >
         <h1 className="tracking-tighter font-bold text-xs lg:text-sm text-zinc-800">
-          Career
+          CUSTOMER REGISTRATION
         </h1>
 
         <div className="text-center py-8 text-[#86aebf] tracking-tighter">
-          <h1 className="text-[20px] lg:text-4xl font-black">
-            Career Application Form
-          </h1>
+          <h1 className="text-[20px] lg:text-4xl font-black">Customer Registration Inquiry from</h1>
           <h2 className="font-bold text-zinc-600 pt-4">
-            We’re thrilled you're considering joining us! Please provide your
-            details below.
+            We’re excited to onboard you! Please share your registration info below.
           </h2>
         </div>
 
         <div
-          className="flex flex-col items-center bg-white p-8 rounded-3xl shadow-lg"
+          className="flex flex-col items-center  bg-white p-8 rounded-3xl shadow-lg"
           style={{ minWidth: "50rem" }}
         >
           <form
@@ -66,125 +68,113 @@ export default function career() {
             ref={form}
             onSubmit={sendEmail}
           >
-            {/* ✅ Hidden Form Type */}
-            <input type="hidden" name="form_type" value="Career" />
-            <input type="hidden" name="career_form" value="true" />
-            
-
-
-            {/* First & Last Name */}
-            <div className="grid grid-cols-2 gap-4">
-              <input
-                type="text"
-                placeholder="First Name"
-                name="first_name"
-                required
-                className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#86aebf]"
-              />
-              <input
-                type="text"
-                placeholder="Last Name"
-                name="last_name"
-                required
-                className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#86aebf]"
-              />
-            </div>
-
-            <select
-              name="designation_applied"
-              required
-              className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#86aebf]"
-            >
-              <option value="">Designation Applied For</option>
-              <option value="Developer">Developer</option>
-              <option value="Designer">Designer</option>
-              <option value="Manager">Manager</option>
-            </select>
+<input type="hidden" name="form_type" value="Customer Registration" />
+<input type="hidden" name="customer_form" value="true" />
 
             <input
               type="text"
-              placeholder="Your Current Designation"
-              name="current_designation"
+              placeholder="Company Name"
+              name="company_name"
               required
               className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#86aebf]"
             />
-
+            <textarea
+              placeholder="Registered Address (as per PAN/GST)"
+              name="reg_add"
+              required
+              className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#86aebf]"
+            />
+            <input
+              type="tel"
+              placeholder="Contact Number"
+              name="phone"
+              required
+              className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#86aebf]"
+            />
+            <input
+              type="tel"
+              placeholder="Alternate Contact Number"
+              name="alt_phone"
+            //   required
+              className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#86aebf]"
+            />
+            <input
+              type="email"
+              placeholder="Primary Email ID"
+              name="primary_email"
+              required
+              className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#86aebf]"
+            />
+            <input
+              type="email"
+              placeholder="Alternate Email ID"
+              name="alt_email"
+              className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#86aebf]"
+            />
             <input
               type="number"
-              placeholder="Current CTC (e.g. 600000)"
-              name="current_ctc"
+              placeholder="Capacity (Wp)"
+              name="capacity"
               required
               className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#86aebf]"
             />
 
-            <input
-              type="number"
-              placeholder="Expected CTC (e.g. 700000)"
-              name="expected_ctc"
-              required
-              className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#86aebf]"
-            />
-
-            <select
-              name="notice_period"
-              required
-              className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#86aebf]"
-            >
-              <option value="">Notice Period</option>
-              <option value="Immediate">Immediate</option>
-              <option value="15 Days">15 Days</option>
-              <option value="1 Month">1 Month</option>
-              <option value="2 Months">2 Months</option>
-            </select>
-
-            <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label>Rate per Watt:</label>&nbsp;&nbsp;&nbsp;
               <input
-                type="text"
-                placeholder="Street Address"
-                name="street_address"
+                type="number"
+                placeholder="Rupees"
+                name="rupees"
                 required
                 className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#86aebf]"
-              />
+              />&nbsp;&nbsp;&nbsp;
               <input
-                type="text"
-                placeholder="Postal / Zip Code"
-                name="zip_code"
+                type="number"
+                placeholder="Paise"
+                name="paise"
                 required
                 className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#86aebf]"
               />
             </div>
 
-            <select
-              name="state"
+            <input
+              type="number"
+              placeholder="Total Project Cost"
+              name="cost"
               required
               className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#86aebf]"
-            >
-              <option value="">Select Your State</option>
-              <option value="West Bengal">West Bengal</option>
-              <option value="Maharashtra">Maharashtra</option>
-              <option value="Karnataka">Karnataka</option>
-            </select>
-
-            <select
-              name="city"
+            />
+            <input
+              type="text"
+              placeholder="Allocated Project Name"
+              name="project_name"
               required
               className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#86aebf]"
-            >
-              <option value="">Select Your City</option>
-              <option value="Kolkata">Kolkata</option>
-              <option value="Mumbai">Mumbai</option>
-              <option value="Bangalore">Bangalore</option>
-            </select>
-{/* Resume Note */}
-<p className="text-sm text-gray-600">
-  <span className="font-semibold">Note:</span> If you want to send your resume, please email it to{" "}
-  <a
-    href="mailto:visiongreenrkr@gmail.com"
-    className="text-blue-600 underline hover:text-blue-800"
-  >
-    visiongreenrkr@gmail.com
-  </a>
-</p>
+            />
+            <input
+              type="text"
+              placeholder="Job Order / Purchase Order / Other"
+              name="order"
+              required
+              className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#86aebf]"
+            />
+            <input
+              type="text"
+              placeholder="Work Completion Timeline"
+              name="timeline"
+              required
+              className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#86aebf]"
+            />
+            <textarea
+              placeholder="Remarks (if any)"
+              name="remarks"
+              className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#86aebf]"
+            />
+            <textarea
+              placeholder="Suggestions for Us"
+              name="suggesion"
+              className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#86aebf]"
+            />
 
             <button
               type="submit"
@@ -199,7 +189,9 @@ export default function career() {
                 <>
                   <svg
                     aria-hidden="true"
-                    className="w-6 h-6 animate-spin font-semibold fill-black"
+                    className={`w-6 h-6 animate-spin font-semibold ${
+                      Loading ? "fill-black" : "fill-white"
+                    }`}
                     viewBox="0 0 100 101"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -237,7 +229,9 @@ export default function career() {
               ) : (
                 <>
                   <svg
-                    className="h-6 w-6 font-semibold text-white"
+                    className={`h-6 w-6 font-semibold ${
+                      Loading || Submitted ? "text-black" : "text-white"
+                    }`}
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
